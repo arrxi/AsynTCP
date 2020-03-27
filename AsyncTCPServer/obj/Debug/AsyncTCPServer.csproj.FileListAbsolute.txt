@@ -1,0 +1,12 @@
+E:\Workspace\CSworkspace\CS\SocektTCPServer\AsyncTCPServer\bin\Debug\AsyncTCPServer.exe.config
+E:\Workspace\CSworkspace\CS\SocektTCPServer\AsyncTCPServer\bin\Debug\AsyncTCPServer.exe
+E:\Workspace\CSworkspace\CS\SocektTCPServer\AsyncTCPServer\bin\Debug\AsyncTCPServer.pdb
+E:\Workspace\CSworkspace\CS\SocektTCPServer\AsyncTCPServer\obj\Debug\AsyncTCPServer.exe
+E:\Workspace\CSworkspace\CS\SocektTCPServer\AsyncTCPServer\obj\Debug\AsyncTCPServer.pdb
+E:\Workspace\CSworkspace\CS\SocektTCPServer\AsyncTCPServer\obj\Debug\AsyncTCPServer.csprojResolveAssemblyReference.cache
+E:\Workspace\CSworkspace\CS\SocektTCPServer\AsyncTCPServer\bin\Debug\Common.dll
+E:\Workspace\CSworkspace\CS\SocektTCPServer\AsyncTCPServer\bin\Debug\Common.pdb
+E:\Workspace\CSworkspace\CS\SocektTCPServer\AsyncTCPServer\bin\Debug\LitJSON.dll
+E:\Workspace\unityLearnWorkspace\AsynTCP\AsyncTCPServer\bin\Debug\AsyncTCPServer.exe.config
+E:\Workspace\unityLearnWorkspace\AsynTCP\AsyncTCPServer\obj\Debug\AsyncTCPServer.exe
+E:\Workspace\unityLearnWorkspace\AsynTCP\AsyncTCPServer\obj\Debug\AsyncTCPServer.pdb

@@ -1,0 +1,6 @@
+E:\Workspace\CSworkspace\CS\SocektTCPServer\Common\bin\Debug\Common.dll.config
+E:\Workspace\CSworkspace\CS\SocektTCPServer\Common\bin\Debug\Common.dll
+E:\Workspace\CSworkspace\CS\SocektTCPServer\Common\bin\Debug\Common.pdb
+E:\Workspace\CSworkspace\CS\SocektTCPServer\Common\obj\Debug\Common.dll
+E:\Workspace\CSworkspace\CS\SocektTCPServer\Common\obj\Debug\Common.pdb
+E:\Workspace\CSworkspace\CS\SocektTCPServer\Common\bin\Debug\LitJSON.dll

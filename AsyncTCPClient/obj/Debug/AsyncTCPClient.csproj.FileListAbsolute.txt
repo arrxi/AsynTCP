@@ -1,0 +1,5 @@
+E:\Workspace\CSworkspace\CS\SocektTCPServer\AsyncTCPClient\bin\Debug\AsyncTCPClient.exe.config
+E:\Workspace\CSworkspace\CS\SocektTCPServer\AsyncTCPClient\bin\Debug\AsyncTCPClient.exe
+E:\Workspace\CSworkspace\CS\SocektTCPServer\AsyncTCPClient\bin\Debug\AsyncTCPClient.pdb
+E:\Workspace\CSworkspace\CS\SocektTCPServer\AsyncTCPClient\obj\Debug\AsyncTCPClient.exe
+E:\Workspace\CSworkspace\CS\SocektTCPServer\AsyncTCPClient\obj\Debug\AsyncTCPClient.pdb

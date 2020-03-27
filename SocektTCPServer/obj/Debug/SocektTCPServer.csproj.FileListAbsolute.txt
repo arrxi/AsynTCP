@@ -1,0 +1,16 @@
+D:\_OwnerSpace\CS\SocektTCPServer\SocektTCPServer\bin\Debug\SocektTCPServer.exe.config
+D:\_OwnerSpace\CS\SocektTCPServer\SocektTCPServer\bin\Debug\SocektTCPServer.exe
+D:\_OwnerSpace\CS\SocektTCPServer\SocektTCPServer\bin\Debug\SocektTCPServer.pdb
+D:\_OwnerSpace\CS\SocektTCPServer\SocektTCPServer\obj\Debug\SocektTCPServer.csprojAssemblyReference.cache
+D:\_OwnerSpace\CS\SocektTCPServer\SocektTCPServer\obj\Debug\SocektTCPServer.csproj.CoreCompileInputs.cache
+D:\_OwnerSpace\CS\SocektTCPServer\SocektTCPServer\obj\Debug\SocektTCPServer.exe
+D:\_OwnerSpace\CS\SocektTCPServer\SocektTCPServer\obj\Debug\SocektTCPServer.pdb
+E:\Workspace\CSworkspace\CS\SocektTCPServer\SocektTCPServer\bin\Debug\SocektTCPServer.exe.config
+E:\Workspace\CSworkspace\CS\SocektTCPServer\SocektTCPServer\obj\Debug\SocektTCPServer.exe
+E:\Workspace\CSworkspace\CS\SocektTCPServer\SocektTCPServer\obj\Debug\SocektTCPServer.pdb
+E:\Workspace\CSworkspace\CS\SocektTCPServer\SocektTCPServer\bin\Debug\SocektTCPServer.exe
+E:\Workspace\CSworkspace\CS\SocektTCPServer\SocektTCPServer\bin\Debug\SocektTCPServer.pdb
+E:\Workspace\CSworkspace\CS\SocektTCPServer\SocektTCPServer\bin\Debug\LitJSON.dll
+E:\Workspace\CSworkspace\CS\SocektTCPServer\SocektTCPServer\obj\Debug\SocektTCPServer.csprojAssemblyReference.cache
+E:\Workspace\CSworkspace\CS\SocektTCPServer\SocektTCPServer\obj\Debug\SocektTCPServer.csproj.CoreCompileInputs.cache
+E:\Workspace\CSworkspace\CS\SocektTCPServer\SocektTCPServer\obj\Debug\SocektTCPServer.csproj.CopyComplete
