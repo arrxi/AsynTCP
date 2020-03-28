@@ -7,20 +7,19 @@ using System.Text;
 using System.Threading.Tasks;
 using Common.Message;
 using Common.Protocol;
-namespace AsyncTCPServer
-{
-    public class Message<T>where T :Protocol,new(){
 
-        byte[] buffer;
-        MemoryStream memoryStream;
-        BinaryReader reader;
-        T protocol;
+namespace AsyncTCPServer {
+
+    public class Message {
+        private byte[] buffer;
+        private MemoryStream memoryStream;
+        private BinaryReader reader;
+
         public Message()
         {
-            buffer =  new byte[1024]; 
+            buffer = new byte[1024];
             memoryStream = new MemoryStream();
             reader = new BinaryReader(memoryStream);
-            protocol = new T();
         }
 
         public byte[] Buffer
@@ -30,18 +29,11 @@ namespace AsyncTCPServer
                 return buffer;
             }
 
-            set
-            {
-                buffer = value;
-            }
+            //set
+            //{
+            //    buffer = value;
+            //}
         }
-        /// <summary>
-
-        /// </summary>
-        /// <param name="ar"></param>
-        /// 
-        ////
-
 
         ///
         /// <summary>
@@ -51,7 +43,7 @@ namespace AsyncTCPServer
         /// </summary>
         /// <param name="_client">发来消息的客户端</param>
         /// <param name="count">接收到的数据的字节数</param>
-        public void UnPack(Socket _client,int count)
+        public void UnPack(Socket _client, int count)
         {
             reader.BaseStream.Write(buffer, 0, count);
             reader.BaseStream.Position = 0;
@@ -62,13 +54,12 @@ namespace AsyncTCPServer
                 {
                     var content = reader.ReadBytes(contentLen - 4);
 
-                    Console.Write(_client.RemoteEndPoint + ">>  ");
-                    var result = protocol.Deserialze<Req_Test>(content);
-                    if (result!=null)
-                    {
-                        Common.Log.log(result.ToString());
-                    }
-
+                    //Console.Write(_client.RemoteEndPoint + ">>  ");
+                    //var result = protocol.Deserialze<Req_Test>(content);
+                    //if (result != null)
+                    //{
+                    //    Common.Log.log(result.ToString());
+                    //}
                 }
             }
             var remain = reader.ReadBytes(StreamCurrentLength(reader.BaseStream));
@@ -76,17 +67,17 @@ namespace AsyncTCPServer
             reader.BaseStream.Write(remain, 0, remain.Length);
             reader.BaseStream.Seek(0, SeekOrigin.Begin);
             reader.BaseStream.Position = 0;
-
         }
+
         private int StreamCurrentLength(Stream mem)
         {
             return (int)(mem.Length - mem.Position);
         }
+
         public void Close()
         {
             reader.Close();
             memoryStream.Close();
         }
-
     }
 }

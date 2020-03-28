@@ -4,3 +4,12 @@ E:\Workspace\CSworkspace\CS\SocektTCPServer\Common\bin\Debug\Common.pdb
 E:\Workspace\CSworkspace\CS\SocektTCPServer\Common\obj\Debug\Common.dll
 E:\Workspace\CSworkspace\CS\SocektTCPServer\Common\obj\Debug\Common.pdb
 E:\Workspace\CSworkspace\CS\SocektTCPServer\Common\bin\Debug\LitJSON.dll
+D:\_OwnerSpace\GitDesktop\CS\AsynTCP\Common\obj\Debug\Common.csprojAssemblyReference.cache
+D:\_OwnerSpace\GitDesktop\CS\AsynTCP\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+D:\_OwnerSpace\GitDesktop\CS\AsynTCP\Common\obj\Debug\Common.pdb
+D:\_OwnerSpace\GitDesktop\CS\AsynTCP\Common\bin\Debug\Common.dll.config
+D:\_OwnerSpace\GitDesktop\CS\AsynTCP\Common\bin\Debug\Common.dll
+D:\_OwnerSpace\GitDesktop\CS\AsynTCP\Common\bin\Debug\Common.pdb
+D:\_OwnerSpace\GitDesktop\CS\AsynTCP\Common\bin\Debug\LitJSON.dll
+D:\_OwnerSpace\GitDesktop\CS\AsynTCP\Common\obj\Debug\Common.csproj.CopyComplete
+D:\_OwnerSpace\GitDesktop\CS\AsynTCP\Common\obj\Debug\Common.dll

@@ -5,57 +5,58 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
-namespace AsyncTCPServer
-{
-    public class Server
-    {
+using System.Threading;
+
+namespace AsyncTCPServer {
+
+    public class Server {
         private static Server _instance;
-        Socket _serverSocket;
-        IPEndPoint ip;
-        List<Client> clientList = new List<Client>();
+        private Socket _serverSocket;
+        private IPEndPoint ip;
+        private List<Client> clientList = new List<Client>();
+        private Thread operatorMsg;
 
         public static Server instance
         {
             get
             {
-                if (_instance==null) _instance = new Server();
+                if (_instance == null) _instance = new Server();
                 return _instance;
             }
         }
-        Server()
+
+        private Server()
         {
             ip = new IPEndPoint(GetLocalIPAddressinUse(), 9999);
             _serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
-
         }
+
         public void Start()
         {
             _serverSocket.Bind(ip);
             _serverSocket.Listen(10);
 
             _serverSocket.BeginAccept(AcceptCallBack, null);
-            Common.Log.log("服务器已启动,服务器ip为："+ip);
+            Common.Log.log("服务器已启动,服务器ip为：" + ip);
         }
 
         private void AcceptCallBack(IAsyncResult ar)
         {
             Socket clientSocket = _serverSocket.EndAccept(ar);
-            Client client = new Client(clientSocket,this);
+            Client client = new Client(clientSocket, this);
             clientList.Add(client);
             client.Start();
             _serverSocket.BeginAccept(AcceptCallBack, null);
-
         }
+
         public void RemoveClient(Client client)
         {
             lock (clientList)
             {
-                if (client!=null)
+                if (client != null)
                 {
                     clientList.Remove(client);
                 }
-
             }
         }
 
