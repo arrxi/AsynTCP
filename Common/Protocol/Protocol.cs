@@ -8,19 +8,21 @@ using System.IO;
 namespace Common.Protocol {
 
     public class DataPack<T> where T : Protocol, new() {
+        public static T protocol = new T();
+
         public MsgType type;
         public byte[] data;
-        private static T protocol;
 
         public DataPack(byte[] data)
         {
-            if (protocol != null)
-            {
-                protocol = new T();
-            }
+            //if (protocol != null)
+            //{
+            //    protocol = new T();
+            //}
             this.data = data;
             this.type = (MsgType)BitConverter.ToInt32(this.data, 0);
         }
+
     }
 
     public abstract class Protocol {
@@ -35,14 +37,14 @@ namespace Common.Protocol {
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
-        public abstract byte[] Serialize<T>(MsgType type, T t) where T : IMessage;
+        public abstract byte[] Serialize<T>(MsgType type, T t) where T : IDataPack;
 
         /// <summary>
         /// 反序列化数据
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public abstract T Deserialze<T>(byte[] data) where T : IMessage;
+        public abstract T Deserialze<T>(byte[] data) where T : IDataPack;
     }
 
     /// <summary>

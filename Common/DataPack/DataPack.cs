@@ -4,13 +4,13 @@ using System.Text;
 
 namespace Common.Message {
 
-    public abstract class IMessage {
+    public abstract class IDataPack {
     }
 
-    public class Req_Login : IMessage {
+    public class Req_Login : IDataPack {
     }
 
-    public class Req_Test : IMessage {
+    public class Req_Test : IDataPack {
         public string id;
         public string name;
 
@@ -25,7 +25,7 @@ namespace Common.Message {
         }
     }
 
-    public class Res_Test : IMessage {
+    public class Res_Test : IDataPack {
         public string name;
         public int source;
 

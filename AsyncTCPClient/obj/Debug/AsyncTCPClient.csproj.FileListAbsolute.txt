@@ -3,3 +3,11 @@ E:\Workspace\CSworkspace\CS\SocektTCPServer\AsyncTCPClient\bin\Debug\AsyncTCPCli
 E:\Workspace\CSworkspace\CS\SocektTCPServer\AsyncTCPClient\bin\Debug\AsyncTCPClient.pdb
 E:\Workspace\CSworkspace\CS\SocektTCPServer\AsyncTCPClient\obj\Debug\AsyncTCPClient.exe
 E:\Workspace\CSworkspace\CS\SocektTCPServer\AsyncTCPClient\obj\Debug\AsyncTCPClient.pdb
+E:\Workspace\unityLearnWorkspace\AsynTCP\AsyncTCPClient\bin\Debug\AsyncTCPClient.pdb
+E:\Workspace\unityLearnWorkspace\AsynTCP\AsyncTCPClient\bin\Debug\Common.dll
+E:\Workspace\unityLearnWorkspace\AsynTCP\AsyncTCPClient\bin\Debug\LitJSON.dll
+E:\Workspace\unityLearnWorkspace\AsynTCP\AsyncTCPClient\bin\Debug\Common.pdb
+E:\Workspace\unityLearnWorkspace\AsynTCP\AsyncTCPClient\obj\Debug\AsyncTCPClient.pdb
+E:\Workspace\unityLearnWorkspace\AsynTCP\AsyncTCPClient\bin\Debug\AsyncTCPClient.dll.config
+E:\Workspace\unityLearnWorkspace\AsynTCP\AsyncTCPClient\bin\Debug\AsyncTCPClient.dll
+E:\Workspace\unityLearnWorkspace\AsynTCP\AsyncTCPClient\obj\Debug\AsyncTCPClient.dll

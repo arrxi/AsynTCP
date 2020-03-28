@@ -5,21 +5,21 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
-using Common.Message;
 using Common.Protocol;
 
-namespace AsyncTCPServer {
+namespace Common {
 
-    public class Message {
+    public class OpMessage{
         private byte[] buffer;
         private MemoryStream memoryStream;
         private BinaryReader reader;
-
-        public Message()
+        Queue<KeyValuePair<Socket,DataPack<NormalProtocol>>> queue;
+        public OpMessage(Queue<KeyValuePair<Socket, DataPack<NormalProtocol>>> queue)
         {
             buffer = new byte[1024];
             memoryStream = new MemoryStream();
             reader = new BinaryReader(memoryStream);
+            this.queue = queue;
         }
 
         public byte[] Buffer
@@ -34,6 +34,7 @@ namespace AsyncTCPServer {
             //    buffer = value;
             //}
         }
+
 
         ///
         /// <summary>
@@ -52,8 +53,11 @@ namespace AsyncTCPServer {
                 int contentLen = reader.ReadInt32();
                 if (StreamCurrentLength(reader.BaseStream) >= contentLen - 4)
                 {
-                    var content = reader.ReadBytes(contentLen - 4);
+                    //content为一个消息 不好含长度数据的
 
+                    var content = reader.ReadBytes(contentLen - 4);
+                    var data = new KeyValuePair<Socket, DataPack<NormalProtocol>>(_client, new DataPack<NormalProtocol>(content));
+                    queue.Enqueue(data);
                     //Console.Write(_client.RemoteEndPoint + ">>  ");
                     //var result = protocol.Deserialze<Req_Test>(content);
                     //if (result != null)

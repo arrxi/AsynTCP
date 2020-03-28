@@ -16,7 +16,7 @@ namespace AsyncTCPServer {
         private Socket clientSocket;
         private BinaryReader mem;
         private byte[] buffer;
-        private Message message = new Message();
+        private OpMessage message = new OpMessage(Server.instance.msgQueue);
 
         public Client()
         {

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using Common.Protocol;
 
 namespace AsyncTCPServer {
 
@@ -14,7 +15,11 @@ namespace AsyncTCPServer {
         private Socket _serverSocket;
         private IPEndPoint ip;
         private List<Client> clientList = new List<Client>();
+        #region 消息处理线程
+        public Queue<KeyValuePair<Socket, DataPack<NormalProtocol>>> msgQueue = new Queue<KeyValuePair<Socket, DataPack<NormalProtocol>>>();
         private Thread operatorMsg;
+        #endregion
+
 
         public static Server instance
         {
@@ -25,19 +30,36 @@ namespace AsyncTCPServer {
             }
         }
 
+
         private Server()
         {
-            ip = new IPEndPoint(GetLocalIPAddressinUse(), 9999);
-            _serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         }
 
-        public void Start()
+        public void Start(string ip="127.0.0.1",int port=9999)
         {
-            _serverSocket.Bind(ip);
-            _serverSocket.Listen(10);
+            Common.HandlerCenter.instance.InitHandler();
+            var ipe = new IPEndPoint(IPAddress.Parse(ip),port); ;// new IPEndPoint(GetLocalIPAddressinUse(), 9999);
+            _serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
+            _serverSocket.Bind(ipe);
+            _serverSocket.Listen(10);
+            operatorMsg = new Thread(OpMsgThread);
+            operatorMsg.Start();
             _serverSocket.BeginAccept(AcceptCallBack, null);
             Common.Log.log("服务器已启动,服务器ip为：" + ip);
+        }
+        /// <summary>
+        /// 处理消息的线程
+        /// </summary>
+        private void OpMsgThread()
+        {
+            while (true)
+            {
+                if (msgQueue.Count>0)
+                {
+                    Common.HandlerCenter.instance.Udpate(msgQueue.Dequeue());
+                }
+            }
         }
 
         private void AcceptCallBack(IAsyncResult ar)
