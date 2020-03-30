@@ -8,7 +8,8 @@ namespace Common.Message {
         None,
         Req_Test,
         Res_Test,
-
+        Req_UnityTest,
+        Res_UnityTest,
         Req_Login
     }
 }

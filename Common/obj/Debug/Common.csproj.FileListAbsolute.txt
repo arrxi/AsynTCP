@@ -18,3 +18,5 @@ E:\Workspace\unityLearnWorkspace\AsynTCP\Common\bin\Debug\Common.dll
 E:\Workspace\unityLearnWorkspace\AsynTCP\Common\bin\Debug\Common.pdb
 E:\Workspace\unityLearnWorkspace\AsynTCP\Common\obj\Debug\Common.dll
 E:\Workspace\unityLearnWorkspace\AsynTCP\Common\obj\Debug\Common.pdb
+E:\Workspace\unityLearnWorkspace\AsynTCP\Common\bin\Debug\LitJSON.dll
+E:\Workspace\unityLearnWorkspace\AsynTCP\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache

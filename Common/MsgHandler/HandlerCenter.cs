@@ -15,9 +15,13 @@ namespace Common {
         bool initOK = false;
         Dictionary<MsgType, Action<Socket, DataPack<NormalProtocol>>> handlers = new Dictionary<MsgType, Action<Socket, DataPack<NormalProtocol>>>();
 
-        public void InitHandler()
+        public void InitHandler(Action handlerCall)
         {
             initOK = true;
+            if (handlerCall!=null)
+            {
+                handlerCall.Invoke();
+            }
             MsgHandler.TestMsgHandler.instance.Register();
 
             

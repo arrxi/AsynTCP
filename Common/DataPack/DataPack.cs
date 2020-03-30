@@ -39,4 +39,28 @@ namespace Common.Message {
             this.source = source;
         }
     }
+
+    public class Res_UnityTest:IDataPack {
+        public string name;
+        public string name1;
+        public Res_UnityTest()
+        {
+
+        }
+        public Res_UnityTest(string name, string name1)
+        {
+            this.name = name;
+            this.name1 = name1;
+        }
+    }
+    public class Req_UnityTest:IDataPack {
+        public int a;
+        public int b;
+        public Req_UnityTest() { }
+        public Req_UnityTest(int a, int b)
+        {
+            this.a = a;
+            this.b = b;
+        }
+    }
 }

@@ -37,7 +37,7 @@ namespace AsyncTCPServer {
 
         public void Start(string ip="127.0.0.1",int port=9999)
         {
-            Common.HandlerCenter.instance.InitHandler();
+            Common.HandlerCenter.instance.InitHandler(InitHandler.InitMsgHandlerCallBack);
             var ipe = new IPEndPoint(IPAddress.Parse(ip),port); ;// new IPEndPoint(GetLocalIPAddressinUse(), 9999);
             _serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
