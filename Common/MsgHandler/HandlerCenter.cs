@@ -8,24 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Common {
+
     public interface IMessageHandler {
+
         void Register();
     }
-    public class HandlerCenter:Singleton<HandlerCenter> {
-        bool initOK = false;
-        Dictionary<MsgType, Action<Socket, DataPack<NormalProtocol>>> handlers = new Dictionary<MsgType, Action<Socket, DataPack<NormalProtocol>>>();
+
+    public class HandlerCenter : Singleton<HandlerCenter> {
+        private bool initOK = false;
+        private Dictionary<MsgType, Action<Socket, DataPack<NormalProtocol>>> handlers = new Dictionary<MsgType, Action<Socket, DataPack<NormalProtocol>>>();
 
         public void InitHandler(Action handlerCall)
         {
             initOK = true;
-            if (handlerCall!=null)
+            if (handlerCall != null)
             {
                 handlerCall.Invoke();
             }
             MsgHandler.TestMsgHandler.instance.Register();
-
-            
         }
+
         public void Register(MsgType type, Action<Socket, DataPack<NormalProtocol>> func)
         {
             if (!initOK)
@@ -42,6 +44,7 @@ namespace Common {
                 handlers.Add(type, func);
             }
         }
+
         public void UnRegister(MsgType type)
         {
             if (handlers.ContainsKey(type))
@@ -50,12 +53,11 @@ namespace Common {
             }
             else
             {
-                Log.logWarning("{0}类型的消息未注册！！",type.ToString());
-
+                Log.logWarning("{0}类型的消息未注册！！", type.ToString());
             }
         }
 
-        public void Udpate(KeyValuePair<Socket,DataPack<NormalProtocol>> data)
+        public void Udpate(KeyValuePair<Socket, DataPack<NormalProtocol>> data)
         {
             if (!initOK)
             {

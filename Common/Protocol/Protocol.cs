@@ -22,7 +22,6 @@ namespace Common.Protocol {
             this.data = data;
             this.type = (MsgType)BitConverter.ToInt32(this.data, 0);
         }
-
     }
 
     public abstract class Protocol {

@@ -15,7 +15,7 @@ namespace AsyncTCPServer {
         private Server server;
         private Socket clientSocket;
         private BinaryReader mem;
-        private byte[] buffer;
+
         private OpMessage message = new OpMessage(Server.instance.msgQueue);
 
         public Client()
@@ -25,7 +25,6 @@ namespace AsyncTCPServer {
         public Client(Socket clientSocket, Server server)
         {
             mem = new BinaryReader(new MemoryStream());
-            buffer = new byte[1024];
             this.clientSocket = clientSocket;
             this.server = server;
             Log.log("-客户端   {0}   上线", clientSocket.RemoteEndPoint);

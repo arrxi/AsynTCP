@@ -15,11 +15,13 @@ namespace AsyncTCPServer {
         private Socket _serverSocket;
         private IPEndPoint ip;
         private List<Client> clientList = new List<Client>();
+
         #region 消息处理线程
+
         public Queue<KeyValuePair<Socket, DataPack<NormalProtocol>>> msgQueue = new Queue<KeyValuePair<Socket, DataPack<NormalProtocol>>>();
         private Thread operatorMsg;
-        #endregion
 
+        #endregion 消息处理线程
 
         public static Server instance
         {
@@ -30,15 +32,14 @@ namespace AsyncTCPServer {
             }
         }
 
-
         private Server()
         {
         }
 
-        public void Start(string ip="127.0.0.1",int port=9999)
+        public void Start(Action registerActions, string ip = "127.0.0.1", int port = 9999)
         {
-            Common.HandlerCenter.instance.InitHandler(InitHandler.InitMsgHandlerCallBack);
-            var ipe = new IPEndPoint(IPAddress.Parse(ip),port); ;// new IPEndPoint(GetLocalIPAddressinUse(), 9999);
+            Common.HandlerCenter.instance.InitHandler(registerActions);
+            var ipe = new IPEndPoint(IPAddress.Parse(ip), port); ;// new IPEndPoint(GetLocalIPAddressinUse(), 9999);
             _serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             _serverSocket.Bind(ipe);
@@ -48,6 +49,7 @@ namespace AsyncTCPServer {
             _serverSocket.BeginAccept(AcceptCallBack, null);
             Common.Log.log("服务器已启动,服务器ip为：" + ip);
         }
+
         /// <summary>
         /// 处理消息的线程
         /// </summary>
@@ -55,7 +57,7 @@ namespace AsyncTCPServer {
         {
             while (true)
             {
-                if (msgQueue.Count>0)
+                if (msgQueue.Count > 0)
                 {
                     Common.HandlerCenter.instance.Udpate(msgQueue.Dequeue());
                 }
